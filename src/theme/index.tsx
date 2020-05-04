@@ -1,7 +1,6 @@
-import React, { ReactNode } from "react";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, createGlobalStyle } from "styled-components";
 
-const theme = {
+export const defaultTheme: DefaultTheme = {
   colors: {
     primary: "#6F2232",
     secondary: "#C3083F",
@@ -11,15 +10,17 @@ const theme = {
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
     small: "1em",
-    medium: "2em",
+    medium: "1.4em",
     large: "3em",
   },
 };
-interface ThemeProps {
-  children: ReactNode;
-}
-const Theme = ({ children }: ThemeProps) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
-);
 
-export default Theme;
+export const GlobalStyle = createGlobalStyle`
+  body{
+    background: ${props => props.theme.colors.background};
+    font-family: ${props => props.theme.fonts[1]};
+  }
+  p, span {
+    color: white;
+  }
+`
