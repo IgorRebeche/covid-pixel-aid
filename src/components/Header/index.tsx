@@ -1,12 +1,10 @@
-import React from "react";
-import Card from "../Card";
+import React, { ReactNode } from "react";
+import { Wrapper } from "./styles";
 
-interface Props {}
+interface Props {
+  children: ReactNode;
+}
 
 export default function Header(props: Props) {
-  return (
-    <Card>
-      <p> AAAAAa </p>
-    </Card>
-  );
+  return <Wrapper>{props.children}</Wrapper>;
 }
