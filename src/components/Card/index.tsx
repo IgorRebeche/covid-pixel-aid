@@ -3,10 +3,12 @@ import { Wrapper } from "./styles";
 interface Props {
   centered?: boolean;
   children: ReactNode;
+  width?: string;
+  height?: string;
 }
 
 export default function Card(props: Props) {
-  const { children } = props;
+  const { children, height, width } = props;
 
-  return <Wrapper>{children}</Wrapper>;
+  return <Wrapper height={height} width={width}>{children}</Wrapper>;
 }
